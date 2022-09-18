@@ -112,6 +112,7 @@ author:
   twitter          : 
   vine             :
   weibo            :
+  cv               : https://zxp46.github.io/files/CV.pdf
   xing             :
   youtube          :
   wikipedia        :
@@ -236,7 +237,7 @@ defaults:
       author_profile: true
       share: false
       comment: true
-  # _talks
+  # _projects
   - scope:
       path: ""
       type: projects
