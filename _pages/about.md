@@ -14,4 +14,4 @@ I'm also an undergrad at Shanghai Jiaotong University, major in Electrical and C
 
 My research interests are mainly focused on generative modelling and unsupervised learning, with the aim to explore the potential of unlabeled data. My research domain primarily lies in computer vision, but I believe the intuition and math foundations behind the ideas can be spread to other aspects of machine learning. 
 
-### [CV](https://zxp46.github.io/files/CV.pdf)
+## [CV](https://zxp46.github.io/files/CV.pdf)

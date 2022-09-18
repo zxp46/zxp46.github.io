@@ -8,4 +8,4 @@ date: 2022-08-29
 location: "Ann Arbor, MI, USA"
 ---
 
-[Foundations of Computer Vision. With Professor Andrew Owens.](https://www.eecs.umich.edu/courses/eecs442-ahowens/fa22/)
+[Foundations of Computer Vision.](https://www.eecs.umich.edu/courses/eecs442-ahowens/fa22/) With Professor Andrew Owens.
