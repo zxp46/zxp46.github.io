@@ -8,4 +8,4 @@ date: 2021-02-15
 location: "Shanghai, China"
 ---
 
-Academic Writing 2. With Professor Amalia Jiva
+Teaching assistant of Academic Writing 2. With Professor Amalia Jiva
