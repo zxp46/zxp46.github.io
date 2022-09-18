@@ -81,9 +81,9 @@ analytics:
 # Site Author
 author:
   name             : "Zixuan Pan"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  avatar           : "photo.jpeg"
+  bio              : "Senior CSE student at University of Michigan"
+  location         : "Ann Arbor, MI"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "http://yourfullgooglescholarurl.com"
@@ -184,7 +184,7 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
+  projects:
     output: true
     permalink: /:collection/:path/
 
