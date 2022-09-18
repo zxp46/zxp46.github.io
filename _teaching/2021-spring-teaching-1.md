@@ -4,7 +4,7 @@ collection: teaching
 type: "Workshop"
 permalink: /teaching/2021-spring-teaching-1
 venue: "Shanghai Jiaotong University, Joint Institute"
-date: 2021-02
+date: 2021-02-15
 location: "Shanghai, China"
 ---
 
