@@ -11,7 +11,7 @@ Combining Masked Image Modeling with Contrastive Learning by proposing a new dat
 
 *Jan 2022 ~ Apr 2022*
 
-[[Report](https://zxp46.github.io/projects/project_DAC.pdf)]     [[Github](https://github.com/zxp46/mae-modified)]
+[[Report](https://zxp46.github.io/projects/project_DAC.pdf)]     [[Github](https://github.com/zxp46/mae-modified)] [[Slides](https://zxp46.github.io/projects/project_DAC_slides.pdf)]
 
 FAD: Feature Alignment Discriminator for Abstractive Text Summarization
 ======
@@ -19,7 +19,7 @@ Tackling the discrete nature of GAN in NLP with feature matching discriminator. 
 
 *Feb 2022 ~ Apr 2022*
 
-[[Report](https://zxp46.github.io/projects/project_FAD.pdf)]     [[Github](https://github.com/zxp46/EECS487_Project_FAD)]
+[[Report](https://zxp46.github.io/projects/project_FAD.pdf)]     [[Github](https://github.com/zxp46/EECS487_Project_FAD)] [[Slides](https://zxp46.github.io/projects/project_FAD_slides.pdf)]
 
 Vocoder review
 ======
