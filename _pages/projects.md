@@ -11,7 +11,7 @@ Combining Masked Image Modeling with Contrastive Learning by proposing a new dat
 
 *Jan 2022 ~ Apr 2022*
 
-[[Report](https://zxp46.github.io/projects/project_DAC.pdf)]     [[Github](https://github.com/zxp46/mae-modified)] [[Slides](https://zxp46.github.io/projects/project_DAC_slides.pdf)]
+[[Report](https://zxp46.github.io/files/project_DAC.pdf)]     [[Github](https://github.com/zxp46/mae-modified)] [[Slides](https://zxp46.github.io/files/project_DAC_slides.pdf)]
 
 FAD: Feature Alignment Discriminator for Abstractive Text Summarization
 ======
@@ -19,7 +19,7 @@ Tackling the discrete nature of GAN in NLP with feature matching discriminator. 
 
 *Feb 2022 ~ Apr 2022*
 
-[[Report](https://zxp46.github.io/projects/project_FAD.pdf)]     [[Github](https://github.com/zxp46/EECS487_Project_FAD)] [[Slides](https://zxp46.github.io/projects/project_FAD_slides.pdf)]
+[[Report](https://zxp46.github.io/files/project_FAD.pdf)]     [[Github](https://github.com/zxp46/EECS487_Project_FAD)] [[Slides](https://zxp46.github.io/files/project_FAD_slides.pdf)]
 
 Vocoder review
 ======
@@ -35,7 +35,7 @@ A comprehensive review of method on the paper, with reimplementation of part of 
 
 *Mar 2022 ~ Apr 2022*
 
-[[Report](https://zxp46.github.io/projects/proejct_minmax_optim_review.pdf)]     [[Github](https://github.com/zxp46/EECS559-Final-Project)]
+[[Report](https://zxp46.github.io/files/proejct_minmax_optim_review.pdf)]     [[Github](https://github.com/zxp46/EECS559-Final-Project)]
 
 Reimplementation of [WGAN-GP](https://arxiv.org/pdf/1704.00028.pdf)
 ======
@@ -43,5 +43,5 @@ Reimplementation and performance comparison of [WGAN](https://arxiv.org/pdf/1701
 
 *Nov 2021 ~ Dec 2021*
 
-[[Report](https://zxp46.github.io/projects/project_WGAN-GP_reimplementation.pdf)]     [[Github](https://github.com/zxp46/EECS545-Final-Project)]
+[[Report](https://zxp46.github.io/files/project_WGAN-GP_reimplementation.pdf)]     [[Github](https://github.com/zxp46/EECS545-Final-Project)]
 
