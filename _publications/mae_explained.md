@@ -4,7 +4,7 @@ title: "Mask Models are Token Level Contrastive Learners"
 
 collection: publications
 
-permalink: /publication/mask-models-are-patch-level-contrastive-learners
+permalink: /publication/mask-models-are-token-level-contrastive-learners
 
 excerpt: 'To better understand the underlying mechanism behind these models' success, I proposed a theoretical framework for mask modeling. By treating mask modeling as a low-rank recovery task, we demonstrate that it is a parametric version of Spectral Clustering and the reconstruction loss conforms to the form of Spectral Contrastive loss.'
 
