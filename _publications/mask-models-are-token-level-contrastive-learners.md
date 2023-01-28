@@ -2,7 +2,7 @@
 title: "Mask Models are Token Level Contrastive Learners"
 collection: publications
 permalink: /publication/mask-models-are-token-level-contrastive-learners
-excerpt: 'A new approach to define curiosity-driven intrinsic reward in Reinforcement Learning. It features a combination of unsupervised learning and the minimax intuition in curiosity based RL methods.'
+excerpt: 'Proposed a theoretical framework to analysis mask models as token level contrastive learning models.'
 date: 2023-01-26
 venue: 'Submitted to ICML 2023'
 paperurl: 'ttps://zxp46.github.io/files/paper_mask_model_explained.pdf'
