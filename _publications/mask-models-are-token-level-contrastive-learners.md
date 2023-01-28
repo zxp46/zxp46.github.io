@@ -12,6 +12,8 @@ date: 2023-01-26
 
 venue: 'Submitted to ICML 2023 '
 
+paperurl: 'https://zxp46.github.io/files/paper_mask_model_explained.pdf'
+
 # citation: ''
 
 ---
