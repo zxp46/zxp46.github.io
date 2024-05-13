@@ -187,19 +187,18 @@
         We introduce a simple masking strategy that randomly drops out clusters. 
 
         Firstly, we break the image into patches. Next, we compute the pairwise cosine similarity between each pair of normalized patches. We randomly select a small subset (less than 5%) of these patches to serve as cluster centers, which we refer to as anchor patches. For each anchor patch, we define a cluster that includes all patches within a specified distance 
-        𝑟
+        𝑟.
  <!-- We provide a simplified pseudocode of the masking strategy in Algorithm \ref{alg:mask}.  -->
     </p>
 
     <div class="barplot">
         <div class="image_container">
-            <img src="assets/method.png">
+            <img src="assets/method.png" style="width: 80%;"> <!-- Adjust the width to your preference -->
             <div class="caption" style="margin-top: 0.0vw">
                 <p></p>
             </div>
         </div>
     </div>
-
     <h1></h1>
 
     <h1>Experiment Results</h1>
