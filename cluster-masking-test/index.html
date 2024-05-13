@@ -184,10 +184,10 @@
 
     <p>
         <!-- We cast real-world humanoid control as a data modeling problem over a large collections of sensorimotor trajectories. Like in language, we train a general transformer model to autoregressively predict shifted input sequences. In contrast to language, the nature of data in robotics is different. It is high-dimensional, contains multiple sensory modalities, and actions. We tokenize the input trajectories and train a causal transformer model to predict shifted tokens. Importantly, we predict complete input sequences, including both sensory and action tokens. In other words, we are modeling the joint data distribution as opposed to the conditional action distribution. -->
-        We introduce a masking strategy that drops out random clusters. 
-        We first split an input H × W image into patches. We then compute the pairwise cosine similarity between every pair of normalized patches. We choose a small subset (less than 5%) of these patches at random to act as cluster centers. 
-        For each of these selected anchor patches, we define a cluster consisting of patches that lie within a distance r.  
-        All patches within a cluster are masked out. The distance threshold r is automatically searched before training according to an average masking ratio.
+        We introduce a simple masking strategy that randomly drops out clusters. 
+
+        Firstly, we break the image into patches. Next, we compute the pairwise cosine similarity between each pair of normalized patches. We randomly select a small subset (less than 5%) of these patches to serve as cluster centers, which we refer to as anchor patches. For each anchor patch, we define a cluster that includes all patches within a specified distance 
+        𝑟
  <!-- We provide a simplified pseudocode of the masking strategy in Algorithm \ref{alg:mask}.  -->
     </p>
 
@@ -202,7 +202,7 @@
 
     <h1></h1>
 
-    <h1>Main Result</h1>
+    <h1>Experiment Results</h1>
 
     <p>
         Zero-shot Vision-Language Retrieval:
