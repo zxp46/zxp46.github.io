@@ -3,26 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined HTML</title>
+    <title>Efficient Vision-Language Pre-training by Cluster Masking</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link your CSS file here -->
+    <!-- Additional head elements -->
+</head>
+<body>
+    <!-- Video element -->
+    <div class="gif-container">
+        <img src="animation.gif" alt="" style="width: 70%; height: auto; display: block; margin: auto;">
+    </div>
+ 
+    <div id="title_slide" style="margin-top: -150px;"> <!-- Adjusts the top margin to move the section up -->
+        <div class="title_left">
+            <h1>Efficient Vision-Language Pre-training by Cluster Masking</h1>
+            <div class="author-container-1">
+                <div class="grid-item"><a href="https://zi-hao-wei.github.io/">Zihao Wei*</a></div>
+                <div class="grid-item"><a href="https://zxp46.github.io/">Zixuan Pan*</a></div>
+                <div class="grid-item"><a href="https://andrewowens.com/">Andrew Owens</a></div>
+            </div>
+        
+            <div class="berkeley">
+                <p>University of Michigan</p>
+            </div>
+            <div class="button-container">
+                <a href="" class="button">Paper</a>
+                <a href="" class="button">Demo</a>
+            </div>
+    
+            <br>
+    
+            <div id="abstract" class="grid-container">
+                <p>
+                   We propose a simple strategy for masking image patches during visual-language contrastive learning that improves the quality of the learned representations and the training speed. During each iteration of training, we randomly mask clusters of visually similar image patches, as measured by their raw pixel intensities. This provides an extra learning signal, beyond the contrastive training itself, since it forces a model to predict words for masked visual structures solely from context. It also speeds up training by reducing the amount of data used in each image. We evaluate the effectiveness of our model by pre-training on a number of benchmarks, finding that it outperforms other masking strategies, such as FLIP, on the quality of the learned representation.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr class="rounded">
+    <div id="overview">
+
+
+
+    <h1>Cluster-based Masking as an Efficient Pretraining method</h1>
+
+    <p>
+        <!-- We cast real-world humanoid control as a data modeling problem over a large collections of sensorimotor trajectories. Like in language, we train a general transformer model to autoregressively predict shifted input sequences. In contrast to language, the nature of data in robotics is different. It is high-dimensional, contains multiple sensory modalities, and actions. We tokenize the input trajectories and train a causal transformer model to predict shifted tokens. Importantly, we predict complete input sequences, including both sensory and action tokens. In other words, we are modeling the joint data distribution as opposed to the conditional action distribution. -->
+        We introduce a simple masking strategy that randomly drops out clusters. 
+
+        Firstly, we break the image into patches. Next, we compute the pairwise cosine similarity between each pair of normalized patches. We randomly select a small subset (less than 5%) of these patches to serve as cluster centers, which we refer to as anchor patches. For each anchor patch, we define a cluster that includes all patches within a specified distance 
+        𝑟.
+ <!-- We provide a simplified pseudocode of the masking strategy in Algorithm \ref{alg:mask}.  -->
+    </p>
+
+    <div class="barplot">
+        <div class="image_container" style="display: flex; justify-content: center; align-items: center; height: 100%;"> <!-- Using flexbox to center content -->
+            <img src="assets/method.png" style="width: 65%;"> <!-- Image size reduced -->
+            <div class="caption" style="margin-top: 0.0vw">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <h1></h1>
+
+
+
+    <h1>Experiment Results</h1>
+
+    <p>
+        <strong>Cluster Visualization:</strong>
+    </p>
+
+    <p>
+        We visualize the clusters of patches obtained from our masking strategy. Each grid belongs to a cluster, with patches from the same cluster grouped together. Hover over the patches to see the clusters they belong to.
+    </p>
+
     <style>
         .containers-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 3vw;
-            padding: 0 1%; /* Set left and right padding to 1% of the page width */
+            margin: 0 auto; /* Centering horizontally */
+            padding: 0 1%;
             position: relative;
-            border: 5px solid #2f2f2f;
-            border-radius: 10px;
-            box-sizing: border-box; /* Include padding and border in the element's total width */
-        }
-
-        .containers-row .patches-grid {
-            width: 20%; /* Adjust the width as needed */
-            height: 100%;
-            padding: 0 1%; 
-            margin-bottom: 0vw; /* Add margin between containers */
-            display: grid;
+            transform: scale(0.8); /* Scale down the entire container */
+            width: 50%; /* Adjust width as necessary */
         }
 
         .patches-grid {
@@ -50,167 +114,135 @@
             transform: scale(1.0); /* Increase size on hover */
             opacity: 0.5; /* Lower opacity on hover */
         }
-        .category-0 {
-            border-color: rgb(159, 157, 157); /* Change border color for category 0 patches */
-            border-width: 2px; /* Optional: Adjust border width */
-            border-style: solid; /* Optional: Set border style */
+
+        .object-container {
+            width: 55%; /* Set the width of the container to 60% of its parent */
+            margin: auto; /* This will center the container horizontally */
+            margin-bottom: -50px;
+            text-align: center; /* Ensures that the content inside is centered */
+        }
+        
+        object {
+            width: 100%; /* Makes the <object> element take up 100% of its container's width */
+            height: 400px; /* You can adjust this value as needed */
+            display: block; /* Ensures that the object element is treated as a block for centering */
+        }
+
+        .gif-container {
+            text-align: center; /* Center the contents of the div */
+            width: 100%; /* Take the full width of its parent */
+            margin: auto; /* Auto margins for additional centering help if needed */
         }
     </style>
     <link rel="stylesheet" href="main.css"> <!-- Link to external CSS -->
     <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.png"> -->
 </head>
-<body>
-    <!-- Contents from the first HTML -->
-    <div class="containers-row">
-        <div class="patches-grid" id="patches-container-1"></div>
-        <div class="patches-grid" id="patches-container-2"></div>
-        <div class="patches-grid" id="patches-container-3"></div>
-        <div class="patches-grid" id="patches-container-4"></div>
-        <div class="patches-grid" id="patches-container-5"></div>
-    </div>
+    <body>
+        <!-- Contents from the first HTML -->
+        <div class="containers-row">
+            <div class="patches-grid" id="patches-container-1"></div>
+            <div class="patches-grid" id="patches-container-2"></div>
+            <div class="patches-grid" id="patches-container-3"></div>
+            <!-- <div class="patches-grid" id="patches-container-4"></div> -->
+            <!-- <div class="patches-grid" id="patches-container-5"></div> -->
+        </div>
 
-    <script>
-        // Function to create img elements for each patch
-        function displayPatches(containerId, folderIndex, categories) {
-            const container = document.getElementById(containerId);
+        <script>
+            // Function to create img elements for each patch
+            function displayPatches(containerId, folderIndex, categories) {
+                const container = document.getElementById(containerId);
 
-            // Number of patches
-            const numPatches = 224 / 16;
+                // Number of patches
+                const numPatches = 224 / 16;
 
-            // Loop through patches and create img elements
-            for (let i = 0; i < numPatches * numPatches; i++) {
-                const patchImg = document.createElement("img");
-                patchImg.classList.add("patch");
-                patchImg.src = "patch" + folderIndex + "/" + i + ".png"; // Change the path accordingly
-                patchImg.setAttribute("data-category", categories[i]); // Set data attribute for category
-                patchImg.setAttribute("data-index", i); // Set data attribute for index
-                container.appendChild(patchImg);
+                // Loop through patches and create img elements
+                for (let i = 0; i < numPatches * numPatches; i++) {
+                    const patchImg = document.createElement("img");
+                    patchImg.classList.add("patch");
+                    patchImg.src = "patch" + folderIndex + "/" + i + ".png"; // Change the path accordingly
+                    patchImg.setAttribute("data-category", categories[i]); // Set data attribute for category
+                    patchImg.setAttribute("data-index", i); // Set data attribute for index
+                    container.appendChild(patchImg);
 
-                // Add category class to patch
-                patchImg.classList.add("category-" + categories[i]);
-                if (categories[i] !== 0) {
-                    patchImg.style.opacity = 0.5;
+                    // Add category class to patch
+                    patchImg.classList.add("category-" + categories[i]);
+                    if (categories[i] !== 0) {
+                        patchImg.style.opacity = 0.5;
+                    }
                 }
             }
-        }
 
-        // Categories obtained from the result
-        const categories1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 1, 1, 1, 1, 0, 0, 0, 2, 1, 1, 0, 0, 4, 3, 0, 1, 1, 1, 0, 0, 3, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 4, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 3, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 4, 3, 3, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 4, 0, 0, 1, 1, 0, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0];
-        const categories2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        const categories3 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 2, 2, 0, 0, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0];
-        const categories4 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 3, 3, 3, 0, 0, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 4, 4, 3, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3];
-        const categories5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 5, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 5, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 5, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            // Categories obtained from the result
+            const categories1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 1, 1, 1, 1, 0, 0, 0, 2, 1, 1, 0, 0, 4, 3, 0, 1, 1, 1, 0, 0, 3, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 4, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 3, 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 4, 3, 3, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 4, 0, 0, 1, 1, 0, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0];
+            const categories2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 2, 2, 0, 0, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0];
+            const categories3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 5, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 5, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 5, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-        // Call the function for both images when the page loads
-        window.onload = function() {
-            displayPatches("patches-container-1", 1, categories1);
-            displayPatches("patches-container-2", 2, categories2);
-            displayPatches("patches-container-3", 3, categories3);
-            displayPatches("patches-container-4", 4, categories4);
-            displayPatches("patches-container-5", 5, categories5);
-        };
+            // Call the function for both images when the page loads
+            window.onload = function() {
+                displayPatches("patches-container-1", 1, categories1);
+                displayPatches("patches-container-2", 2, categories2);
+                displayPatches("patches-container-3", 3, categories3);
+            };
 
-        // Add event listener for mouseover event
-        document.querySelectorAll(".patches-grid").forEach(function(container) {
-            container.addEventListener("mouseover", function(event) {
-                const hoveredIndex = event.target.getAttribute("data-index");
-                const hoveredCategory = event.target.getAttribute("data-category");
+            // Add event listener for mouseover event
+            document.querySelectorAll(".patches-grid").forEach(function(container) {
+                container.addEventListener("mouseover", function(event) {
+                    const hoveredIndex = event.target.getAttribute("data-index");
+                    const hoveredCategory = event.target.getAttribute("data-category");
 
-                // Highlight patches of the same category
-                const patches = container.querySelectorAll(".patch");
-                patches.forEach(patch => {
-                    if (patch.getAttribute("data-category") === hoveredCategory) {
-                        patch.style.opacity = 1;
-                        patch.style.transform = "scale(1.1)"; // Larger size for patches of the same category
-                    } else {
-                        patch.style.opacity = 0.3;
-                        patch.style.transform = "scale(0.75)"; // Smaller size for patches of different categories
-                    }
+                    // Highlight patches of the same category
+                    const patches = container.querySelectorAll(".patch");
+                    patches.forEach(patch => {
+                        if (patch.getAttribute("data-category") === hoveredCategory) {
+                            patch.style.opacity = 1;
+                            patch.style.transform = "scale(1.1)"; // Larger size for patches of the same category
+                        } else {
+                            patch.style.opacity = 0.3;
+                            patch.style.transform = "scale(0.75)"; // Smaller size for patches of different categories
+                        }
+                    });
                 });
             });
-        });
 
-        // Add event listener for mouseout event
-        document.querySelectorAll(".patches-grid").forEach(function(container) {
-            container.addEventListener("mouseout", function() {
-                // Restore opacity and size of all patches
-                const patches = container.querySelectorAll(".patch");
-                patches.forEach(patch => {
-                    // patch.style.opacity = 1;
-                    // patch.style.transform = "scale(1)";
-                    if (patch.getAttribute("data-category") !== "0") {
-                        patch.style.opacity = 0.5;
-                        patch.style.transform = "scale(1)";
-                    }
-                    else{
-                        patch.style.opacity = 1;
-                        patch.style.transform = "scale(1)";
-                    }
+            // Add event listener for mouseout event
+            document.querySelectorAll(".patches-grid").forEach(function(container) {
+                container.addEventListener("mouseout", function() {
+                    // Restore opacity and size of all patches
+                    const patches = container.querySelectorAll(".patch");
+                    patches.forEach(patch => {
+                        // patch.style.opacity = 1;
+                        // patch.style.transform = "scale(1)";
+                        if (patch.getAttribute("data-category") !== "0") {
+                            patch.style.opacity = 0.5;
+                            patch.style.transform = "scale(1)";
+                        }
+                        else{
+                            patch.style.opacity = 1;
+                            patch.style.transform = "scale(1)";
+                        }
+                    });
                 });
             });
-        });
-    </script>
+        </script>
     
-    <div id="title_slide">
-        <div class="title_left">
-            <h1>Efficient Vision-Language Pre-training by Cluster Masking</h1>
-            <div class="author-container-1">
-                <div class="grid-item"><a href="https://zi-hao-wei.github.io/">Zihao Wei*</a></div>
-                <div class="grid-item"><a href="https://zxp46.github.io/">Zixuan Pan*</a></div>
-                <div class="grid-item"><a href="https://andrewowens.com/">Andrew Owens</a></div>
-            </div>
-        
-            <div class="berkeley">
-                <p>University of Michigan</p>
-            </div>
-            <div class="button-container">
-                <a href="" class="button">Paper</a>
-                <a href="" class="button">Video</a>
-            </div>
-    
-            <br>
-    
-            <div id="abstract" class="grid-container">
-                <p>
-                   We propose a simple strategy for masking image patches during visual-language contrastive learning that improves the quality of the learned representations and the training speed. During each iteration of training, we randomly mask clusters of visually similar image patches, as measured by their raw pixel intensities. This provides an extra learning signal, beyond the contrastive training itself, since it forces a model to predict words for masked visual structures solely from context. It also speeds up training by reducing the amount of data used in each image. We evaluate the effectiveness of our model by pre-training on a number of benchmarks, finding that it outperforms other masking strategies, such as FLIP, on the quality of the learned representation.
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr class="rounded">
-    <div id="overview">
-
-    <h1>Cluster-based Masking as an Efficient Pretraining method</h1>
 
     <p>
-        <!-- We cast real-world humanoid control as a data modeling problem over a large collections of sensorimotor trajectories. Like in language, we train a general transformer model to autoregressively predict shifted input sequences. In contrast to language, the nature of data in robotics is different. It is high-dimensional, contains multiple sensory modalities, and actions. We tokenize the input trajectories and train a causal transformer model to predict shifted tokens. Importantly, we predict complete input sequences, including both sensory and action tokens. In other words, we are modeling the joint data distribution as opposed to the conditional action distribution. -->
-        We introduce a simple masking strategy that randomly drops out clusters. 
-
-        Firstly, we break the image into patches. Next, we compute the pairwise cosine similarity between each pair of normalized patches. We randomly select a small subset (less than 5%) of these patches to serve as cluster centers, which we refer to as anchor patches. For each anchor patch, we define a cluster that includes all patches within a specified distance 
-        𝑟.
- <!-- We provide a simplified pseudocode of the masking strategy in Algorithm \ref{alg:mask}.  -->
-    </p>
-
-    <div class="barplot">
-        <div class="image_container" style="display: flex; justify-content: center; align-items: center; height: 100%;"> <!-- Using flexbox to center content -->
-            <img src="assets/method.png" style="width: 80%;"> <!-- Image size reduced -->
-            <div class="caption" style="margin-top: 0.0vw">
-                <p></p>
-            </div>
-        </div>
-    </div>
-    <h1></h1>
-
-    <h1>Experiment Results</h1>
-
-    <p>
-        Zero-shot Vision-Language Retrieval:
+        <strong>Zero-shot Vision-Language Retrieval:</strong>
     </p>
     <p>
-    In the evaluation on the MS-COCO, Flickr8k, and Flickr30k datasets, our model outperforms all the baselines in most parts. Notably, in the Image-to-Text tasks, our model performs best in most datasets, with the exception of a slight performance decrease compared to attntion based FLIP on the MS-COCO dataset. We attribute this success to our training strategy, which prioritizes primary clusters and minimizes the influence of noise. Furthermore, we observe that methods combining RGB information with token embeddings outperform those relying solely on RGB. We hypothesize that this is because the embedding layer, which contains slightly higher-level information.
+    We evaluate image-text retrievals MS-COCO, Flickr8k, and Flickr30k datasets. Our model outperforms the baselines in most benchmarks.
    <!-- When comparing FLIP to CLIP, FLIP's performance is noticeably weaker, even with large batch sizes. We suspect that FLIP's sub-optimal results in our experimental settings may not fully exploit its strengths. This aligns with findings from other studies, such as Yang et al.'s research on ACLIP \cite{yang2022attentive}, which also noted FLIP's limitations. We observe that using attention scores for masking can improve performance compared to purely random masking. However, random masking still falls short of our cluster based masking or even the original CLIP method in some benchmarks. -->
     </p>
-    <div class="barplot">
+
+    <div class="object-container">
+        <object type="text/html" data="i2t.html" width="100%" height="500px"></object>
+    </div>
+
+    <div class="object-container">
+        <object type="text/html" data="t2i.html" width="100%" height="500px"></object>
+    </div>
+
+    <!-- <div class="barplot">
         <div class="image_container">
             <img src="assets/retrieval.png">
             <div class="caption" style="margin-top: 0.0vw">
@@ -220,26 +252,45 @@
     </div>
 
     <p>
-        Zero-shot Classification and Linear Probing.
-    </p>
+        <strong>Zero-shot Classification and Linear Probing:</strong>
+    </p> -->
     <p>
-        Content
+        We evaluate our model on several widely recognized classification benchmarks and outperforms all the baselines on both zero-shot classification and linear probing.
     </p>
-    <div class="barplot">
+    <!-- <div class="barplot">
         <div class="image_container">
             <img src="assets/zero-shot-classification.png">
             <div class="caption" style="margin-top: 0.0vw">
                 <p>We evaluate popular datasets using clip-benchmark. The training time is normalized according to the CLIP's training time. Here N.T. represents normalized time against and IN represents ImageNet.</p>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="object-container">
+        <object type="text/html" data="zsclassification.html" width="100%" height="500px"></object>
+    </div>
+
+    <div class="object-container">
+        <object type="text/html" data="linear.html" width="100%" height="500px"></object>
     </div>
     
+
+    <!-- <div class="barplot">
+        <div class="image_container" style="display: flex; justify-content: center; align-items: center; height: 100%;"> 
+            <img src="assets/linear-probing.png" style="width: 70%;">
+            <div class="caption" style="margin-top: 0.0vw">
+                <p>We evaluate popular datasets using clip-benchmark. The training time is normalized according to the CLIP's training time. Here N.T. represents normalized time against and IN represents ImageNet.</p>
+            </div>
+        </div>
+    </div>
+     -->
     <p>
-        Language Composition.
+        <strong>Language Composition:</strong>
     </p>
     <p>
         <!-- A potential drawback of our method might be understanding compositions of concepts in language. As we mask out clusters,  there is a risk that the model may increasingly adopt bag-of-words tendencies, which could impede its ability to learn the relationships between objects. For example, if an image is captioned with "dog on grass", the grass may be masked for a large portion in our model as they are highly similar to each other. This will make learning the relation ``on'' difficult. Therefore, we apply \sugarcrepe \cite{hsieh2023sugarcrepe} benchmarks to test the model's ability to understand language compositions. \sugarcrepe benchmarks assess this by generating negative captions through manipulations like adding, swapping, or replacing concepts in sentences, followed by text retrieval tests to evaluate the model's accuracy in selecting the correct answer. -->
-        From the our test results on Sugar-Crepe, our model yields comparable results in Relation tests and demonstrates a significant enhancement in Object and Attribution tests, with an average improvement of +3.9% and +3.0% respectively, compared to FLIP. This improvement may stem from the masking of entire objects, which simplifies the challenge of contrastive learning by reducing ambiguity. This clarity facilitates the model's learning of relationships, a crucial factor for composition understanding.
+        We use Sugar-Crepe to test our model's ability to understand language compositions, our model yields comparable results in Relation tests and demonstrates a significant enhancement in Object and Attribution tests.
     </p>
     <div class="barplot">
         <div class="image_container">
