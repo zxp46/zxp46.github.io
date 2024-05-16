@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efficient Vision-Language Pre-training by Cluster Masking</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link your CSS file here -->
-    <!-- Additional head elements -->
+    <style>
+
+    </style>
 </head>
 <body>
     <!-- Video element -->
@@ -121,6 +122,36 @@
             margin-bottom: -50px;
             text-align: center; /* Ensures that the content inside is centered */
         }
+
+        #title_slide {
+            margin-top: -150px; /* Default negative margin */
+        }
+        @media (max-width: 768px) {
+            #title_slide {
+                margin-top: -100px; /* Adjusted for tablets */
+            }
+        }
+        @media (max-width: 480px) {
+            #title_slide {
+                margin-top: 150px; /* Adjusted for mobile phones */
+            }
+        }
+
+
+        /* Media query for tablets */
+        @media (max-width: 768px) {
+            .object-container {
+                width: 75%; /* Wider on smaller screens */
+            }
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 480px) {
+            .object-container {
+                width: 100%; /* Almost full width on very small screens */
+                margin-bottom: 0; /* Adjust margin-bottom for small devices */
+            }
+        }
         
         object {
             width: 100%; /* Makes the <object> element take up 100% of its container's width */
@@ -131,7 +162,11 @@
         .gif-container {
             text-align: center; /* Center the contents of the div */
             width: 100%; /* Take the full width of its parent */
-            margin: auto; /* Auto margins for additional centering help if needed */
+            margin-bottom: 100px; /* Auto margins for additional centering help if needed */
+        }
+
+        .bibtex {
+            font-size: 68px; /* Larger font size for the BibTeX entry */
         }
     </style>
     <link rel="stylesheet" href="main.css"> <!-- Link to external CSS -->
