@@ -10,11 +10,9 @@
 </head>
 <body>
     <!-- Video element -->
-    <div class="gif-container">
-        <img src="animation.gif" alt="" style="width: 60%; height: auto; display: block; margin: auto;">
-    </div>
+
  
-    <div id="title_slide" style="margin-top: -150px;"> <!-- Adjusts the top margin to move the section up -->
+    <div id="title_slide" style="margin-top: -0px;"> <!-- Adjusts the top margin to move the section up -->
         <div class="title_left">
             <h1>Efficient Vision-Language Pre-training by Cluster Masking</h1>
             <div class="author-container-1">
@@ -43,9 +41,13 @@
     <hr class="rounded">
     <div id="overview">
 
-
+    <div class="gif-container">
+        <img src="animation.gif" alt="" style="width: 60%; height: auto; display: block; margin: auto;">
+    </div>
 
     <h1>Cluster-based Masking as an Efficient Pretraining method</h1>
+
+
 
     <p>
         <!-- We cast real-world humanoid control as a data modeling problem over a large collections of sensorimotor trajectories. Like in language, we train a general transformer model to autoregressively predict shifted input sequences. In contrast to language, the nature of data in robotics is different. It is high-dimensional, contains multiple sensory modalities, and actions. We tokenize the input trajectories and train a causal transformer model to predict shifted tokens. Importantly, we predict complete input sequences, including both sensory and action tokens. In other words, we are modeling the joint data distribution as opposed to the conditional action distribution. -->
@@ -162,7 +164,7 @@
         .gif-container {
             text-align: center; /* Center the contents of the div */
             width: 100%; /* Take the full width of its parent */
-            margin-bottom: 100px; /* Auto margins for additional centering help if needed */
+            margin-bottom: 0px; /* Auto margins for additional centering help if needed */
         }
 
         .bibtex {
