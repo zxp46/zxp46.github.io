@@ -18,7 +18,7 @@ My research interests are mainly focused on **unsupervised learning**, with the 
 
 
 <div style="display: flex; align-items: flex-start;">
-  <div style="flex: 1; max-width: 20%; padding-right: 20px;">
+  <div style="flex: 1; max-width: 25%;">
     <img src="https://zxp46.github.io/files/Cluster_masking.png" alt="Efficient Vision-Language Pre-training by Cluster Masking" style="width: 100%;">
   </div>
   <div style="flex: 2;">
