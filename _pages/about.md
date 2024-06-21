@@ -17,15 +17,13 @@ My research interests are mainly focused on **unsupervised learning**, with the 
 ## [CV](https://zxp46.github.io/files/CV.pdf)
 
 
-<table>
-  <tr>
-    <td style="width: 50%; vertical-align: top;">
-      <img src="https://zxp46.github.io/files/Cluster_masking.png" alt="Efficient Vision-Language Pre-training by Cluster Masking" style="width: 100%;">
-    </td>
-    <td style="width: 50%; vertical-align: top; padding-left: 20px;">
-      <h2>Efficient Vision-Language Pre-training by Cluster Masking</h2>
-      Zihao Wei*, <strong>Zixuan Pan*</strong>, Andrew Owens<br>CVPR 2024</p>
-      <p><a href="https://arxiv.org/abs/2405.08815">paper</a> · <a href="https://zxp46.github.io/cluster-masking">project page</a> · <a href="https://github.com/Zi-hao-Wei/Efficient-Vision-Language-Pre-training-by-Cluster-Masking">code</a></p>
-    </td>
-  </tr>
-</table>
+<div style="display: flex; align-items: flex-start;">
+  <div style="flex: 1; max-width: 30%; padding-right: 20px;">
+    <img src="https://zxp46.github.io/files/Cluster_masking.png" alt="Efficient Vision-Language Pre-training by Cluster Masking" style="width: 100%;">
+  </div>
+  <div style="flex: 2;">
+    <h2>Efficient Vision-Language Pre-training by Cluster Masking</h2>
+    Zihao Wei*, <strong>Zixuan Pan*</strong>, Andrew Owens<br>CVPR 2024
+    <p><a href="https://arxiv.org/abs/2405.08815">paper</a> · <a href="https://zxp46.github.io/cluster-masking">project page</a> · <a href="https://github.com/Zi-hao-Wei/Efficient-Vision-Language-Pre-training-by-Cluster-Masking">code</a></p>
+  </div>
+</div>
