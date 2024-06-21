@@ -23,9 +23,10 @@ My research interests are mainly focused on **unsupervised learning**, with the 
   </div>
   <div style="flex: 2">
     <h2 style="margin-top: 0;">Efficient Vision-Language Pre-training by Cluster Masking</h2>
-    [Zihao Wei](https://zi-hao-wei.github.io/)*, <strong>Zixuan Pan*</strong>, [Andrew Owens](https://andrewowens.com/)<br>CVPR 2024
+    Zihao Wei*, <strong>Zixuan Pan*</strong>, [Andrew Owens] <br>CVPR 2024
     <p><a href="https://arxiv.org/abs/2405.08815">paper</a> · <a href="https://zxp46.github.io/cluster-masking">project page</a> · <a href="https://github.com/Zi-hao-Wei/Efficient-Vision-Language-Pre-training-by-Cluster-Masking">code</a></p>
   </div>
 </div>
+
 
 ## [CV](https://zxp46.github.io/files/CV.pdf)
