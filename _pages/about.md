@@ -10,7 +10,7 @@ redirect_from:
 
 I'm Zixuan Pan, an ECE master student at University of Michigan, advised by Professor **[Andrew Owens](https://andrewowens.com/)**.
 
-I got my CSE B.Eng from University of Michigan as well as ECE B.Eng degree from Shanghai Jiaotong University, where I was fortunate to work with Professor **[Kai Yu](https://x-lance.sjtu.edu.cn/en/members/kai_yu)**.
+I got my CS B.Eng from University of Michigan as well as ECE B.Eng degree from Shanghai Jiaotong University, where I was fortunate to work with Professor **[Kai Yu](https://x-lance.sjtu.edu.cn/en/members/kai_yu)**.
 
 My research interests are mainly focused on **unsupervised learning**, with the aim to explore the potential of unlabeled data. 
 
@@ -18,7 +18,7 @@ My research interests are mainly focused on **unsupervised learning**, with the 
 
 
 <div style="display: flex; align-items: flex-start;">
-  <div style="flex: 1; max-width: 30%; padding-right: 20px;">
+  <div style="flex: 1; max-width: 20%; padding-right: 20px;">
     <img src="https://zxp46.github.io/files/Cluster_masking.png" alt="Efficient Vision-Language Pre-training by Cluster Masking" style="width: 100%;">
   </div>
   <div style="flex: 2;">
